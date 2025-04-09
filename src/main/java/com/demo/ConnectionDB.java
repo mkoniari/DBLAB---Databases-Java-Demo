@@ -8,13 +8,13 @@ import java.sql.SQLException;
 public class ConnectionDB {
 
     /* Database connection settings, change dbName, dbusername, dbpassword */
-    private final String ipAddress = "localhost";
-    private final String dbServerPort = "3306";
-    private final String dbName = "your-db-name";
-    private final String dbusername = "your-db-username";
-    private final String dbpassword = "your-db-password";
+    private final String ipAddress = System.getenv("MYSQL_HOST");
+    private final String dbServerPort =  System.getenv("MYSQL_PORT");
+    private final String dbName = System.getenv("MYSQL_DATABASE");
+    private final String dbusername = System.getenv("MYSQL_USER");
+    private final String dbpassword = System.getenv("MYSQL_PASSWORD");
 
-
+   
     private Connection con = null;
 
     /**
